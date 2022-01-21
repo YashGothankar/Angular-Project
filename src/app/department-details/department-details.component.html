@@ -1,0 +1,28 @@
+<h1 style="text-align: center;">Department Details</h1>
+<input type = "text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search by name" class="search">
+<button type="button" class="btn btn-primary button" [routerLink]="['/adddepartment']" style="float: right;">Add Department</button>
+<br>
+<table class="table mt-2">
+    <thead>
+      <tr>
+        <!-- <th scope="col">S.No</th> -->
+        <th scope="col">Department Name</th>
+        <th scope="col">Department No</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empList | filter: searchText | paginate:{itemsPerPage:3, currentPage:p}">
+        <!-- <td>{{emp.id}}</td> -->
+        <td>{{emp.employeeName}}</td>
+        <td>{{emp.employeeAge}}</td>
+        <td>
+          <button type="button" class="btn btn-success" [routerLink]="['/departmentupdate',emp.id]">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="deleteUser(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </table>
+     
+<router-outlet></router-outlet>

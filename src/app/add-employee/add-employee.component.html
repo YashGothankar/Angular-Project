@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+              <label for="employeeName" class="form-label">Employee Name</label>
+              <input type="text" class="form-control" [(ngModel)]="empObj.employeeName" name="employeeName" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="employeeAge" class="form-label">Employee Age</label>
+                <input type="text" class="form-control" [(ngModel)]="empObj.employeeAge" name="employeeAge" autocomplete="off">
+              </div>         
+            <div>
+                <button type="button" class="btn btn-primary" (click)="saveUser()">Add</button>
+                <button type="button" class="btn btn-primary button" [routerLink]="['/employee']">Back</button>
+            </div>  
+          </form>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+              <label for="employeeName" class="form-label">Employee Name</label>
+              <input type="text" class="form-control" [(ngModel)]="depObj.employeeName" name="employeeName">
+            </div>
+            <div class="mb-3">
+                <label for="employeeAge" class="form-label">Employee Age</label>
+                <input type="text" class="form-control" [(ngModel)]="depObj.employeeAge" name="employeeAge">
+              </div>         
+            <div>
+                <button type="button" class="btn btn-primary" (click)="updateUser()">Update</button>
+                <button type="button" class="btn btn-primary button" [routerLink]="['/department']">Back</button>
+            </div>  
+          </form>
+    </div>
+</div>

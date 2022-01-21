@@ -1,0 +1,11 @@
+.hidden{
+    display: none;
+}
+
+.button{
+    float: right;
+}
+
+.search{
+    margin-left: auto;
+}
